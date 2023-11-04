@@ -1,9 +1,9 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
-import { AuthContext } from "../Providers/AuthProvider";
 import { FaGoogle } from "react-icons/fa";
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { AuthContext } from "../../Provider/AuthProvider";
 
 const Login = () => {
   const location = useLocation();
@@ -33,7 +33,7 @@ const Login = () => {
       })
       .catch((error) => {
         console.log(error);
-          setLoginError("Invalid email or password. Please try again.");
+          setLoginError("Invalid email or password. Please try again. If You are new, the click the register!");
       });
   };
 

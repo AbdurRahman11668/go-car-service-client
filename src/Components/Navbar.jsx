@@ -1,14 +1,14 @@
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { FaCartPlus } from "react-icons/fa";
+import { AuthContext } from "../Provider/AuthProvider";
 
 const Navbar = () => {
-//   const { user, logOut } = useContext(AuthContext);
+    const { user, logOut } = useContext(AuthContext);
 
-
-//   const handleSignOut = () => {
-//     logOut().then().catch();
-//   };
+    const handleSignOut = () => {
+      logOut().then().catch();
+    };
 
   const navLinks = (
     <>
@@ -20,7 +20,7 @@ const Navbar = () => {
           Home
         </NavLink>
       </li>
-      {/* {user && (
+      {user && (
         <>
           <li>
             <NavLink
@@ -31,7 +31,7 @@ const Navbar = () => {
             </NavLink>
           </li>
         </>
-    )} */}
+    )}
       <li>
         <NavLink
           to="/login"
@@ -61,10 +61,17 @@ const Navbar = () => {
   return (
     <div className="navbar md:max-w-4xl lg:max-w-7xl md:mx-auto flex-col-reverse md:flex-row">
       <div className="navbar-start justify-center md:justify-start">
-      <NavLink to="/" className=" text-end">
-              <h3 className="text-5xl font-bold">Fitness</h3>
-              <p className="text-sm">Club Center</p>
-            </NavLink>
+        <NavLink to="/" className=" text-end hover:text-[#cf1c1f] text-[#df3437]">
+          <div className="flex items-center space-x-2">
+            <img
+              className="w-14"
+              src="https://i.ibb.co/rb6BHbF/logo.png"
+              alt=""
+            />
+            <h3 className="text-4xl font-bold">FITNESS</h3>
+          </div>
+          <p className="text-sm font-medium">CLUB CENTER</p>
+        </NavLink>
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
             <svg
@@ -95,7 +102,7 @@ const Navbar = () => {
           {navLinks}
         </ul>
       </div>
-      {/* <div className="navbar-end justify-center md:justify-start lg:justify-end">
+      <div className="navbar-end justify-center md:justify-start lg:justify-end">
         {user ? (
           <>
             <img src={user.photoURL} className="w-8 mr-2 rounded-full" alt="" />
@@ -116,7 +123,7 @@ const Navbar = () => {
             </button>
           </Link>
         )}
-      </div> */}
+      </div>
     </div>
   );
 };

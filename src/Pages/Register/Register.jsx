@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import { useContext, useState } from "react";
-import { AuthContext } from "../Providers/AuthProvider";
 import { FaGoogle } from "react-icons/fa";
   import { ToastContainer, toast } from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css';
+import { AuthContext } from "../../Provider/AuthProvider";
 
 const Register = () => {
   const { createUser, signInWithGoogle } = useContext(AuthContext);
