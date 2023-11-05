@@ -1,6 +1,5 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
-import { FaGoogle } from "react-icons/fa";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { AuthContext } from "../../Provider/AuthProvider";
@@ -51,12 +50,12 @@ const Login = () => {
   };
 
   return (
-    <div className="px-10 md:px-0">
+    <div className="mx-10 mt-10 px-10 md:px-0 border-2 lg:max-w-2xl rounded-md lg:mx-auto border-[#df3437] mb-10">
       <div className=" mb-10">
         <h2 className="text-3xl my-5 text-center font-semibold">
           Please Login
         </h2>
-        <form onSubmit={handleLogin} className="md:w-3/4 lg:w-1/3 mx-auto">
+        <form onSubmit={handleLogin} className="px-20">
           <div className="form-control mb-2">
             <label className="label">
               <span className="label-text">Email</span>
@@ -83,28 +82,27 @@ const Login = () => {
           </div>
           <div className="form-control mt-6">
             <button
-              className="btn bg-teal-600 text-white"
+              className="btn bg-[#df3437] hover:bg-border-2 hover:border-[#df3437] hover:text-[#df3437] text-white"
             >
               Login
             </button>
           </div>
         </form>
-            {LoginError && <p className="text-red-700 text-center my-3">{LoginError}</p>}
-            {success && <p className="text-green-700 text-center my-3">{success}</p>}
+            {LoginError && <p className="text-[#df3437] text-center my-3">{LoginError}</p>}
+            {success && <p className="text-[#df3437] text-center my-3">{success}</p>}
         <p className="text-center mt-4">
           Do not have an account ?{"  "}
-          <Link to="/register" className="text-red-600 font-bold">
+          <Link to="/register" className="text-[#df3437] font-bold">
             Register
           </Link>
         </p>
-        <div className=" md:w-3/4 lg:w-1/3 mx-auto ">
+        <div className="text-center">
           <p className="mt-5 mx-auto">
             <button
               onClick={handleGoogleSignIn}
-              className="btn rounded-3xl w-full bg-blue-500 text-white text-xl"
+              className="w-40"
             >
-              <FaGoogle className="mr-2 text-blue-500 p-1 bg-white rounded-3xl text-3xl"></FaGoogle>{" "}
-              Google
+              <img src="https://i.ibb.co/d4vzb27/Google-2015-logo-svg.png" alt="" />
             </button>
           </p>
         </div>

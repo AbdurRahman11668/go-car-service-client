@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link} from "react-router-dom";
 import { useContext, useState } from "react";
 import { FaGoogle } from "react-icons/fa";
   import { ToastContainer, toast } from 'react-toastify';
@@ -24,8 +24,8 @@ const Register = () => {
     if (password.length < 6) {
       setRegisterError("Password must be at least 6 characters or longer");
       return;
-    } else if (!/(?=.*[A-Z])(?=.*\d)(?=.*[@#$%^&+=!])/.test(password)) {
-      setRegisterError("Password must contain at least one capital letter and special character");
+    } else if (!/([A-Z])([a-z])/.test(password)) {
+      setRegisterError("Password must contain at least one uppercase and lowercase letter");
       return;
     }
 
@@ -59,12 +59,12 @@ const Register = () => {
   };
 
   return (
-    <div className="mb-10 px-10 md:px-0">
+    <div className="mx-10 mt-10 mb-10 pb-10 border-2 lg:max-w-2xl rounded-md lg:mx-auto border-[#df3437]">
       <div className="">
         <h2 className="text-3xl my-5 text-center font-semibold">
           Please Register
         </h2>
-        <form onSubmit={handleRegister} className="md:w-3/4 lg:w-1/3 mx-auto">
+        <form onSubmit={handleRegister} className="px-20">
           <div className="form-control mb-5">
             <label className="label">
               <span className="label-text">Name</span>
@@ -100,15 +100,10 @@ const Register = () => {
               className="input input-bordered"
               required
             />
-            <label className="label">
-              <a href="#" className="label-text-alt link link-hover">
-                Forgot password?
-              </a>
-            </label>
           </div>
           <div className="form-control mt-6">
             <button
-              className="btn bg-teal-600 text-white"
+              className="btn bg-[#df3437] hover:bg-border-2 hover:border-[#df3437] hover:text-[#df3437] text-white"
             >
               Register
             </button>
@@ -123,14 +118,13 @@ const Register = () => {
             Login
           </Link>
         </p>
-        <div className=" md:w-3/4 lg:w-1/3 mx-auto ">
+        <div className="text-center">
           <p className="mt-5 mx-auto">
             <button
               onClick={handleGoogleRegister}
-              className="btn rounded-3xl w-full bg-blue-500 text-white text-xl"
+              className="w-40"
             >
-              <FaGoogle className="mr-2 text-blue-500 p-1 bg-white rounded-3xl text-3xl"></FaGoogle>{" "}
-              Google
+              <img src="https://i.ibb.co/d4vzb27/Google-2015-logo-svg.png" alt="" />
             </button>
           </p>
         </div>

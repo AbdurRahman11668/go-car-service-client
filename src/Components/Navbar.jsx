@@ -1,78 +1,82 @@
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
-import { FaCartPlus } from "react-icons/fa";
 import { AuthContext } from "../Provider/AuthProvider";
 
 const Navbar = () => {
-    const { user, logOut } = useContext(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
 
-    const handleSignOut = () => {
-      logOut().then().catch();
-    };
+  const handleSignOut = () => {
+    logOut().then().catch();
+  };
 
   const navLinks = (
     <>
       <li>
         <NavLink
           to="/"
-          className="hover:bg-[#df3437] text-[16px] hover:text-white text-[#df3437]"
+          className="hover:bg-[#df3437] text-[16px] font-semibold hover:text-white text-[#df3437]"
         >
           Home
         </NavLink>
       </li>
-      {user && (
-        <>
-          <li>
-            <NavLink
-              to="/addproduct"
-              className="hover:bg-[#df3437] text-[16px] hover:text-white"
-            >
-              Add Product
-            </NavLink>
-          </li>
-        </>
-    )}
       <li>
         <NavLink
-          to="/login"
-          className="hover:bg-[#df3437] text-[16px] hover:text-white"
+          to="/services"
+          className="hover:bg-[#df3437] text-[16px] font-semibold hover:text-white"
         >
-          Login
+          Services
         </NavLink>
       </li>
-      <li>
-        <NavLink
-          to="/register"
-          className="hover:bg-[#df3437] text-[16px] hover:text-white"
-        >
-          Register
-        </NavLink>
-      </li>
-      <li>
+      {user && <>
+      {/* <li>
         <NavLink
           to="/cart"
           className="hover:bg-[#df3437] text-[16px] hover:text-white"
         >
-          <FaCartPlus className="text-lg"></FaCartPlus>Cart
+          Dashboard
         </NavLink>
+      </li> */}
+      <li className="dropdown dropdown-hover">
+        <label tabIndex={0} className="hover:bg-[#df3437] text-[16px] font-semibold hover:text-white text-[#df3437]">
+        Dashboard
+        </label>
+        <ul
+          tabIndex={0}
+          className="dropdown-content z-[1] menu rounded-box w-32 md:w-40 bg-white text-[16px]"
+        >
+          <li>
+            <a className="hover:bg-[#df3437] text-sm hover:text-white font-semibold">My-Services</a>
+          </li>
+          <li>
+            <a className="hover:bg-[#df3437] text-sm hover:text-white font-semibold">Add-Services</a>
+          </li>
+          <li>
+            <a className="hover:bg-[#df3437] text-sm hover:text-white font-semibold">My-Schedules</a>
+          </li>
+        </ul>
       </li>
     </>
-  );
+}
+    </>
+)
   return (
-    <div className="navbar md:max-w-4xl lg:max-w-7xl md:mx-auto flex-col-reverse md:flex-row">
-      <div className="navbar-start justify-center md:justify-start">
-        <NavLink to="/" className=" text-end hover:text-[#cf1c1f] text-[#df3437]">
+    <div className="navbar md:max-w-3xl uppercase lg:max-w-7xl md:mx-auto flex-col-reverse md:flex-row">
+      <div className="md:navbar-start justify-center md:justify-start">
+        <NavLink
+          to="/"
+          className=" text-end hover:text-[#cf1c1f] text-[#df3437]"
+        >
           <div className="flex items-center space-x-2">
             <img
-              className="w-14"
-              src="https://i.ibb.co/rb6BHbF/logo.png"
+              className="w-10"
+              src="https://i.ibb.co/SXqMf6g/logo-removebg-preview.png"
               alt=""
             />
-            <h3 className="text-4xl font-bold">FITNESS</h3>
+            <h3 className="text-4xl font-bold">GoCar</h3>
           </div>
-          <p className="text-sm font-medium">CLUB CENTER</p>
+          <p className="text-sm font-medium">Service</p>
         </NavLink>
-        <div className="dropdown">
+        <div className="dropdown md:ml-10">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -97,28 +101,32 @@ const Navbar = () => {
           </ul>
         </div>
       </div>
-      <div className="navbar-center hidden lg:flex">
+      <div className="md:navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1 text-[#df3437] font-medium ">
           {navLinks}
         </ul>
       </div>
-      <div className="navbar-end justify-center md:justify-start lg:justify-end">
+      <div className="md:navbar-end justify-center lg:justify-end">
         {user ? (
           <>
-            <img src={user.photoURL} className="w-8 mr-2 rounded-full" alt="" />
-            <a className="text-lg text-[#df3437] font-medium">
+            <img
+              src={user.providerData[0].photoURL}
+              className="w-8 mr-2 rounded-full"
+              alt=""
+            />
+            <a className="text-sm text-red-600 font-semibold">
               {user.providerData[0].displayName}
             </a>
             <button
               onClick={handleSignOut}
-              className="btn ml-2 text-[#df3437] hover:bg-[#df3437] hover:text-white"
+              className="btn ml-2 text-[#df3437] font-bold hover:bg-[#df3437] hover:text-white"
             >
               Sign Out
             </button>
           </>
         ) : (
           <Link to="/login">
-            <button className="btn text-[#df3437] hover:bg-[#df3437] hover:text-white">
+            <button className="btn text-[#df3437] font-bold hover:bg-[#df3437] hover:text-white">
               Login
             </button>
           </Link>

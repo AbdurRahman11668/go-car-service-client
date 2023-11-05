@@ -4,12 +4,12 @@ import { AuthContext } from "../Providers/AuthProvider";
 import PropTypes from "prop-types";
 
 
-const ProvateRoute = () => {
+const PrivateRoute = ({children}) => {
     const {user, loading} = useContext(AuthContext)
     const location = useLocation();
 
     if(loading){
-        return <span className="loading loading-infinity loading-lg"></span>
+        return <img className="loading loading-infinity loading-lg" src="https://i.ibb.co/0X36zNZ/tv-loading.gif"></img>
     }
 
     if(user){
@@ -22,4 +22,4 @@ PrivateRoute.propTypes = {
   children: PropTypes.node,
 };
 
-export default ProvateRoute;
+export default PrivateRoute;
