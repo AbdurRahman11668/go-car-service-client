@@ -11,7 +11,7 @@ const Banner = () => {
         <h2 className="text-2xl font-bold text-gray-700 pt-3">
           <span className="font-bold text-green-500 text-xl md:text-3xl">
             <Typewriter
-              words={["EARN", "Connect"]}
+              words={["EARN", "CONNECT"]}
               loop={1000}
               cursor
               cursorStyle="/"
