@@ -1,7 +1,7 @@
 import { IoIosCheckmarkCircle } from "react-icons/io";
 const Trust = () => {
   return (
-    <div className="my-10 flex flex-col-reverse lg:flex-row px-20 bg-[#FEFBF0] py-10">
+    <div className="my-10 flex flex-col-reverse lg:flex-row lg:px-20 bg-[#FEFBF0] py-10">
       <div className="lg:w-1/2 px-10">
         <h3 className="mb-3 text-4xl font-bold">
           Trusted Cab Services in the World

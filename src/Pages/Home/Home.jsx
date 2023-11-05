@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import Info from "../../Components/Info";
 import HowItWorks from "../../Components/HowItWorks";
 import Trust from "../../Components/Trust";
+import Packages from "../../Components/Packages";
 
 const Home = () => {
   return (
@@ -14,6 +15,7 @@ const Home = () => {
       <Banner></Banner>
       <HowItWorks></HowItWorks>
       <Trust></Trust>
+      <Packages></Packages>
     </motion.div>
   );
 };

@@ -5,10 +5,10 @@ const Banner = () => {
   return (
     <div className="flex px-20 items-center pt-10 md:pt-0 flex-col lg:flex-row ">
       <div className="lg:w-1/2 lg:px-20 text-center lg:text-left">
-        <h5 className="text-[#319be6] hover:text-[#df3437] font-bold text-xl md:text-2xl">
+        <h5 className="text-gray-700 hover:text-[#df3437] font-bold text-xl md:text-2xl">
         Your Car Rental Solution
         </h5>
-        <h2 className="text-2xl font-bold text-[#df3437] pt-3">
+        <h2 className="text-2xl font-bold text-gray-700 pt-3">
           <span className="font-bold text-green-500 text-xl md:text-3xl">
             <Typewriter
               words={["EARN", "Connect"]}
