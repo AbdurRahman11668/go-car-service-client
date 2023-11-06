@@ -12,7 +12,7 @@ const router = createBrowserRouter([
       path: "/",
       element: <Root></Root>,
       errorElement: <ErrorPage></ErrorPage>,
-      loader: () => fetch("https://fitness-club-center-server.vercel.app/"),
+      loader: () => fetch("https://go-car-service-server.vercel.app"),
       children: [
         {
           path: "/",
