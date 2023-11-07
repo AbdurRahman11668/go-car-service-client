@@ -5,37 +5,29 @@ import ServiceCard from "./ServiceCard";
 const Services = () => {
   const services = useServices();
 
-  const [serviceFilter, setServiceFilter] = useState("");
+  const [searchQuery, setSearchQuery] = useState("");
 
-  const handleSearchClick = () => {
-    setServiceFilter(document.getElementById("searchBar").value);
+  const handleSearch = (e) => {
+    const query = e.target.value;
+    setSearchQuery(query);
   };
-  function capitalize(text) {
-    return text.charAt(0).toUpperCase() + text.slice(1);
-  }
-  const filteredCards = serviceFilter
-    ? services.filter(
-        (service) => service.service_name === capitalize(serviceFilter)
-      )
-    : services;
+
+  const filteredData = services.filter((service) =>
+    service.service_name.toLowerCase().includes(searchQuery.toLowerCase())
+  );
 
   return (
     <div className="px-20 mb-10">
-      <div className="flex justify-center py-10">
+      <div className="flex justify-center py-5 mt-5">
         <input
-          id="searchBar"
-          className="rounded-l bg-white border px-3 py-2"
           type="text"
           placeholder="Search here...."
+          value={searchQuery}
+          onChange={handleSearch}
+          className="input input-bordered input-error w-full max-w-xs font-medium text-lg"
         />
-        <button
-          onClick={handleSearchClick}
-          className="rounded-r bg-[#df3437] text-white hover:bg-transparent hover:text-[#df3437] hover:border hover:border-[#df3437] text-lg px-5 font-medium"
-        >
-          Search
-        </button>
       </div>
-      <div className="mt-4">
+      <div className="mt-5">
         <div className="text-center">
           <h3 className="text-4xl font-bold text-[#df3437]">Services</h3>
           <img
@@ -44,8 +36,8 @@ const Services = () => {
             alt=""
           />
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredCards.map((service) => (
+        <div className="space-y-5">
+          {filteredData.map((service) => (
             <ServiceCard key={service._id} service={service}></ServiceCard>
           ))}
         </div>

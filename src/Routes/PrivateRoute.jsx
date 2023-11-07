@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { Navigate, useLocation } from "react-router-dom";
-import { AuthContext } from "../Providers/AuthProvider";
 import PropTypes from "prop-types";
+import { AuthContext } from "../Provider/AuthProvider";
 
 
 const PrivateRoute = ({children}) => {
@@ -9,7 +9,7 @@ const PrivateRoute = ({children}) => {
     const location = useLocation();
 
     if(loading){
-        return <img className="loading loading-infinity loading-lg" src="https://i.ibb.co/0X36zNZ/tv-loading.gif"></img>
+        return <img className="mx-auto mt-20" src="https://i.ibb.co/b5Pj7cT/car-dealer-loader-gif.gif"></img>
     }
 
     if(user){

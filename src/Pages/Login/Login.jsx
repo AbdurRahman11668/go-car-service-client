@@ -3,6 +3,7 @@ import { useContext, useState } from "react";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { AuthContext } from "../../Provider/AuthProvider";
+import axios from "axios";
 
 const Login = () => {
   const location = useLocation();
@@ -21,19 +22,21 @@ const Login = () => {
 
     signIn(email, password)
       .then((result) => {
-        console.log(result.user);
-        if (result.user) {
-          toast("User Logged in Successfuly");
-          // ??Navigate after login
-          navigate(location?.state ? location.state : "/");
-        } else {
-          toast("please check email address.");
-        }
-      })
-      .catch((error) => {
-        console.log(error);
-          setLoginError("Invalid email or password. Please try again. If You are new, the click the register!");
-      });
+        const loggedInUser = result.user;
+                console.log(loggedInUser);
+                const user = { email };
+
+                // get access token
+                axios.post('http://localhost:5000/jwt', user, { withCredentials: true })
+                    .then(res => {
+                        console.log(res.data)
+                        if (res.data.success) {
+                            navigate(location?.state ? location?.state : '/')
+                        }
+                    })
+
+            })
+            .catch(error => console.log(error));
   };
 
   const handleGoogleSignIn = () => {

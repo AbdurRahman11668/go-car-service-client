@@ -4,6 +4,7 @@ import Info from "../../Components/Info";
 import HowItWorks from "../../Components/HowItWorks";
 import Trust from "../../Components/Trust";
 import Packages from "../../Components/Packages";
+import PopularServices from "./Cards/PopularServices";
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
       exit={{ opacity: 0 }}
     >
       <Banner></Banner>
+      <PopularServices></PopularServices>
       <HowItWorks></HowItWorks>
       <Trust></Trust>
       <Packages></Packages>

@@ -27,7 +27,7 @@ const Banner = () => {
         </p>
         <NavLink to={"/services"}>
           <button
-            className="px-8 py-2 bg-[#df3437] hover:bg-transparent hover:border-2 hover:border-[#df3437] text-lg font-medium text-white hover:text-[#df3437] mt-8 rounded"
+            className="px-8 py-2 bg-[#df3437] hover:bg-transparent hover:border-2 border-2 border-[#df3437] text-lg font-medium text-white hover:text-[#df3437] mt-8 rounded"
             style={{ transform: "skew(-205deg)" }}
           >
             <span
