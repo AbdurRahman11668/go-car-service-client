@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { NavLink, useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const UpdateService = () => {
@@ -45,9 +45,7 @@ const UpdateService = () => {
   return (
     <div className="bg-[#f4f4f0] px-24 py-10 ">
       <div className="w-2/3 mx-auto">
-        <h2 className="text-3xl md:text-5xl font-extrabold text-center mb-10">
-          Update Service
-        </h2>
+      <h3 className="text-3xl md:text-4xl text-center mb-5 font-bold"><NavLink to="/" className='text-[#df3437]'>GoCar</NavLink> | Services</h3>
         <form className="" onSubmit={handleUpdateService}>
           {/* Form name & brand name row */}
           <div className="md:flex mb-8">

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import Navbar from "../../Components/Navbar";
 import Footer from "../../Components/Footer";
 
@@ -6,6 +6,7 @@ const ErrorPage = () => {
   return (
     <div>
       <Navbar></Navbar>
+      <NavLink to="/" className='text-[#df3437]'>GoCar</NavLink> | 
       <div className="text-center w-full mb-10">
         <img
           className="w-[700px] mx-auto "

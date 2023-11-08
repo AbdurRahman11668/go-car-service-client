@@ -1,4 +1,4 @@
-import { Link} from "react-router-dom";
+import { Link, NavLink} from "react-router-dom";
 import { useContext, useState } from "react";
 import { FaGoogle } from "react-icons/fa";
   import { ToastContainer, toast } from 'react-toastify';
@@ -62,7 +62,7 @@ const Register = () => {
     <div className="mx-10 mt-10 mb-10 pb-10 border-2 lg:max-w-2xl rounded-md lg:mx-auto border-[#df3437]">
       <div className="">
         <h2 className="text-3xl my-5 text-center font-semibold">
-          Please Register
+        <NavLink to="/" className='text-[#df3437]'>GoCar</NavLink> | Please Register
         </h2>
         <form onSubmit={handleRegister} className="px-20">
           <div className="form-control mb-5">

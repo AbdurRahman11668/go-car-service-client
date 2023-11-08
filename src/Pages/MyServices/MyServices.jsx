@@ -3,6 +3,7 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import axios from "axios";
 import MyService from "./MyService";
+import { NavLink } from "react-router-dom";
 
 const MyServices = () => {
   const { user } = useContext(AuthContext);
@@ -43,7 +44,7 @@ const MyServices = () => {
       exit={{ opacity: 0 }}
     >
       <div className="text-center space-y-3 mb-5">
-        <h3 className="text-3xl font-bold">My Services</h3>
+        <h3 className="text-3xl font-bold"><NavLink to="/" className='text-[#df3437]'>GoCar</NavLink> | My Services</h3>
         <img
           className="mx-auto"
           src="https://i.ibb.co/z2H2Ydj/header-border.webp"

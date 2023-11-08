@@ -1,4 +1,4 @@
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -56,7 +56,7 @@ const Login = () => {
     <div className="mx-10 mt-10 px-10 md:px-0 border-2 lg:max-w-2xl rounded-md lg:mx-auto border-[#df3437] mb-10">
       <div className=" mb-10">
         <h2 className="text-3xl my-5 text-center font-semibold">
-          Please Login
+        <NavLink to="/" className='text-[#df3437]'>GoCar</NavLink> | Please Login
         </h2>
         <form onSubmit={handleLogin} className="px-20">
           <div className="form-control mb-2">
