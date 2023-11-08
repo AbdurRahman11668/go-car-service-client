@@ -1,4 +1,5 @@
-import { useContext } from "react";
+import { motion } from "framer-motion";
+import { useContext} from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import Swal from "sweetalert2";
 
@@ -49,7 +50,9 @@ const AddServices = () => {
   };
 
   return (
-    <div className="bg-[#f4f4f0] px-24 py-10 ">
+    <motion.div className="bg-[#f4f4f0] px-24 py-10 " initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    exit={{ opacity: 0 }}>
       <div className="md:w-2/3 mx-auto">
         <h2 className="text-3xl md:text-5xl font-extrabold text-center mb-10">
           Add Product
@@ -157,7 +160,7 @@ const AddServices = () => {
           />
         </form>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
