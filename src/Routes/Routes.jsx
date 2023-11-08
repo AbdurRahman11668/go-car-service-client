@@ -7,6 +7,7 @@ import Register from "../Pages/Register/Register";
 import Services from "../Pages/Services/Services";
 import PrivateRoute from "./PrivateRoute";
 import ServiceDetails from "../Pages/ServiceDetails/ServiceDetails";
+import AddServices from "../Pages/AddServices/AddServices";
 
 
 const router = createBrowserRouter([
@@ -39,6 +40,12 @@ const router = createBrowserRouter([
           </PrivateRoute>,
                   loader: ({ params }) => fetch(`https://go-car-service-server.vercel.app/products/${params.id}`),
         },
+        {
+          path: "/addservices",
+          element: <PrivateRoute>
+            <AddServices></AddServices>
+          </PrivateRoute>
+        }
       ]
     }
 ]);

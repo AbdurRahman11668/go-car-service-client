@@ -27,8 +27,9 @@ const Navbar = () => {
           Services
         </NavLink>
       </li>
-      {user && <>
-      {/* <li>
+      {user && (
+        <>
+          {/* <li>
         <NavLink
           to="/cart"
           className="hover:bg-[#df3437] text-[16px] hover:text-white"
@@ -36,29 +37,48 @@ const Navbar = () => {
           Dashboard
         </NavLink>
       </li> */}
-      <li className="dropdown dropdown-hover">
-        <label tabIndex={0} className="hover:bg-[#df3437] text-[16px] font-semibold hover:text-white text-[#df3437]">
-        Dashboard
-        </label>
-        <ul
-          tabIndex={0}
-          className="dropdown-content z-[1] menu rounded-box w-32 md:w-40 bg-white text-[16px]"
-        >
-          <li>
-            <a className="hover:bg-[#df3437] text-sm hover:text-white font-semibold">My-Services</a>
+          <li className="dropdown dropdown-hover">
+            <label
+              tabIndex={0}
+              className="hover:bg-[#df3437] text-[16px] font-semibold hover:text-white text-[#df3437]"
+            >
+              Dashboard
+            </label>
+            <ul
+              tabIndex={0}
+              className="dropdown-content z-[1] menu rounded-box w-32 md:w-40 bg-white text-[16px]"
+            >
+              <li>
+                <NavLink
+                  to="/myservices"
+                  className="hover:bg-[#df3437] text-sm font-semibold hover:text-white"
+                >
+                  My-Services
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/addservices"
+                  className="hover:bg-[#df3437] text-sm font-semibold hover:text-white"
+                >
+                  Add-Services
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/myschedules"
+                  className="hover:bg-[#df3437] text-sm font-semibold hover:text-white"
+                >
+                  My-Schedules
+                </NavLink>
+              </li>
+              
+            </ul>
           </li>
-          <li>
-            <a className="hover:bg-[#df3437] text-sm hover:text-white font-semibold">Add-Services</a>
-          </li>
-          <li>
-            <a className="hover:bg-[#df3437] text-sm hover:text-white font-semibold">My-Schedules</a>
-          </li>
-        </ul>
-      </li>
+        </>
+      )}
     </>
-}
-    </>
-)
+  );
   return (
     <div className="navbar md:max-w-3xl uppercase lg:max-w-7xl md:mx-auto flex-col-reverse md:flex-row">
       <div className="md:navbar-start justify-center md:justify-start">

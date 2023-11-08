@@ -36,7 +36,7 @@ const ServiceDetails = () => {
       date2,
       instruction2,
     };
-    fetch("https://go-car-service-server.vercel.app/products", {
+    fetch("https://go-car-service-server.vercel.app/purchases", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -49,7 +49,7 @@ const ServiceDetails = () => {
         if (data.insertedId) {
           Swal.fire({
             title: "Success!",
-            text: "Product Added Successfully!",
+            text: "Service Added Successfully!",
             icon: "success",
             confirmButtonText: "Cool",
           });
@@ -130,12 +130,10 @@ const ServiceDetails = () => {
               <p className="font-medium text-[#df3437] text-sm">
                 Price: {products.price}
               </p>
-              <div className="modal-action">
-                <div className="modal-action w-full" method="dialog">
-                  <button className="mx-auto px-8 py-2 bg-[#df3437] hover:bg-transparent hover:border-2 border-2 border-[#df3437] text-lg font-medium text-white hover:text-[#df3437] mt-5 rounded">
-                    Purchase
-                  </button>
-                </div>
+              <div className=" w-full">
+                <button className="mx-auto px-8 py-2 bg-[#df3437] hover:bg-transparent hover:border-2 border-2 border-[#df3437] text-lg font-medium text-white hover:text-[#df3437] mt-5 rounded">
+                  Purchase
+                </button>
               </div>
               <div className="modal-action">
                 <form method="dialog">
