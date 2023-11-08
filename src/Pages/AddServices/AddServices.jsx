@@ -1,11 +1,51 @@
 import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
+import Swal from "sweetalert2";
 
 const AddServices = () => {
   const { user } = useContext(AuthContext);
 
   const handleAddProduct = (event) => {
     event.preventDefault();
+    
+    const form = event.target;
+    const service_name = form.name.value;
+    const image = form.image.value;
+    const provider_email = user.providerData[0].email;
+    const provider_name = user.providerData[0].displayName;
+    const price = form.price.value;
+    const area = form.area.value;
+    const description = form.description.value;
+
+    const newService = {
+        service_name,
+        image,
+        provider_email,
+        provider_name,
+        price,
+        area,
+        description
+    }
+    // console.log(newService)
+    fetch("https://go-car-service-server.vercel.app/products", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(newService),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.insertedId) {
+          Swal.fire({
+            title: "Success!",
+            text: "Product Added Successfully!",
+            icon: "success",
+            confirmButtonText: "Cool",
+          });
+        }
+      });
   };
 
   return (
@@ -110,7 +150,11 @@ const AddServices = () => {
             </div>
           </div>
           {/* Submit Button */}
-          
+          <input
+            type="submit"
+            value="Add New Product"
+            className="btn btn-block hover:text-red-600 text-white bg-red-600 font-semibold"
+          />
         </form>
       </div>
     </div>
