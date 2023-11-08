@@ -3,6 +3,7 @@ import { useContext, useRef, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet";
 
 const ServiceDetails = () => {
   const products = useLoaderData();
@@ -62,6 +63,11 @@ const ServiceDetails = () => {
     <motion.div className="mt-5 mb-10 px-5 lg:px-20" initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
     exit={{ opacity: 0 }}>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>GoCar - Service Details</title>
+        <link rel="" href="" />
+      </Helmet>
       <div className="space-y-2 w-1/2 mx-auto mb-10 text-center">
         <h5 className="text-[#df3437] text-xl font-semibold">
           {products.provider_name}

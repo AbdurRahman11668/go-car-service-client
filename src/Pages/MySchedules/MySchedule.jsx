@@ -28,6 +28,8 @@ const MySchedule = ({service}) => {
                 </div>
               </div>
             </div>
+
+            
         </div>
     );
 };

@@ -3,6 +3,7 @@ import { useContext} from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import Swal from "sweetalert2";
 import { NavLink } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const AddServices = () => {
   const { user } = useContext(AuthContext);
@@ -51,12 +52,18 @@ const AddServices = () => {
   };
 
   return (
+    <div>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>GoCar - Add Service</title>
+        <link rel="" href="" />
+      </Helmet>
     <motion.div className="bg-[#f4f4f0] px-24 py-10 " initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
     exit={{ opacity: 0 }}>
       <div className="md:w-2/3 mx-auto">
         <h2 className="text-3xl md:text-4xl font-extrabold text-center mb-10">
-          <NavLink to="/" className='text-[#df3437]'>GoCar</NavLink> | Add Product
+          Add Product
         </h2>
         <form className="" onSubmit={handleAddProduct}>
           {/* Form name & brand name row */}
@@ -162,6 +169,7 @@ const AddServices = () => {
         </form>
       </div>
     </motion.div>
+    </div>
   );
 };
 
