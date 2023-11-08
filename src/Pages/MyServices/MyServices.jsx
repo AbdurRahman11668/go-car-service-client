@@ -37,7 +37,7 @@ const MyServices = () => {
 
   return (
     <motion.div
-      className="my-10 px-20"
+      className="my-10 px-5 lg:px-20"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}

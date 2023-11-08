@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 const Banner = () => {
   return (
-    <div className="flex px-20 items-center pt-10 md:pt-0 flex-col lg:flex-row ">
+    <div className="flex px-20 mt-0 md:mt-5 lg:mt-0 items-center pt-10 md:pt-0 flex-col lg:flex-row ">
       <div className="lg:w-1/2 lg:px-20 text-center lg:text-left">
         <h5 className="text-gray-700 hover:text-[#df3437] font-bold text-xl md:text-2xl">
         Your Car Rental Solution

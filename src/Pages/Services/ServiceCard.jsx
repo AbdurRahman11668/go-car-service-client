@@ -13,9 +13,9 @@ const ServiceCard = ({ service }) => {
   } = service;
   return (
     <div>
-      <div className="card w-3/5 mx-auto bg-base-100 shadow-xl">
+      <div className="card lg:w-3/5 mx-auto bg-base-100 shadow-xl">
         <figure className="px-10 pt-10">
-          <img src={image} alt="Car" className="rounded-lg w-3/5" />
+          <img src={image} alt="Car" className="rounded-lg lg:w-3/5" />
         </figure>
         <div className="card-body">
           <h2 className="card-title text-[#df3437]">{service_name}</h2>

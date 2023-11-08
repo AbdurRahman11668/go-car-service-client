@@ -18,7 +18,7 @@ const Services = () => {
   );
 
   return (
-    <motion.div className="px-20 mb-10" initial={{ opacity: 0 }}
+    <motion.div className="px-5 lg:px-20 mb-10" initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
     exit={{ opacity: 0 }}>
       <div className="flex justify-center py-5 mt-5">

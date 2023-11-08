@@ -10,6 +10,7 @@ import ServiceDetails from "../Pages/ServiceDetails/ServiceDetails";
 import AddServices from "../Pages/AddServices/AddServices";
 import MyServices from "../Pages/MyServices/MyServices";
 import UpdateService from "../Pages/UpdateService";
+import MySchedules from "../Pages/MySchedules/MySchedules";
 
 const router = createBrowserRouter([
   {
@@ -53,7 +54,8 @@ const router = createBrowserRouter([
             <AddServices></AddServices>
           </PrivateRoute>
         ),
-        loader: () => fetch("https://go-car-service-server.vercel.app/products"),
+        loader: () =>
+          fetch("https://go-car-service-server.vercel.app/products"),
       },
       {
         path: "/myservices",
@@ -61,14 +63,25 @@ const router = createBrowserRouter([
           <PrivateRoute>
             <MyServices></MyServices>
           </PrivateRoute>
-        )
+        ),
       },
       {
         path: "/updateservice/:id",
+        element: <UpdateService></UpdateService>,
+        loader: ({ params }) =>
+          fetch(
+            `https://go-car-service-server.vercel.app/products/${params.id}`
+          ),
+      },
+      {
+        path: "/myschedules",
         element: (
-            <UpdateService></UpdateService>
+          <PrivateRoute>
+            <MySchedules></MySchedules>
+          </PrivateRoute>
         ),
-        loader: ({ params }) => fetch(`https://go-car-service-server.vercel.app/products/${params.id}`),
+        loader: () =>
+          fetch("https://go-car-service-server.vercel.app/purchases"),
       },
     ],
   },
