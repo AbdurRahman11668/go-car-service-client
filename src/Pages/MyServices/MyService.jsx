@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const MyService = ({ product, handleDelete) => {
+const MyService = ({ product, handleDelete}) => {
   const { _id, service_name, image, area, price } = product;
   return (
     <div className="">
