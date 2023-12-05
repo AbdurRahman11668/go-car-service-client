@@ -126,32 +126,7 @@ const Navbar = () => {
           {navLinks}
         </ul>
       </div>
-      <div className="md:navbar-end justify-center lg:justify-end">
-        {user ? (
-          <>
-            <img
-              src={user.providerData[0].photoURL}
-              className="w-8 mr-2 rounded-full"
-              alt=""
-            />
-            <a className="text-sm text-red-600 font-semibold">
-              {user.providerData[0].displayName}
-            </a>
-            <button
-              onClick={handleSignOut}
-              className="btn ml-2 text-[#df3437] font-bold hover:bg-[#df3437] hover:text-white"
-            >
-              Sign Out
-            </button>
-          </>
-        ) : (
-          <Link to="/login">
-            <button className="btn text-[#df3437] font-bold hover:bg-[#df3437] hover:text-white">
-              Login
-            </button>
-          </Link>
-        )}
-      </div>
+      
     </div>
   );
 };
